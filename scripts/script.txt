@@ -1,0 +1,43 @@
+[Opening Frame: Title Slide]  
+Text on screen: "Display text Mastering 270 271 Eligibility Checks in Healthcare on the screen"  
+Voiceover:  
+"Let’s explore how 270/271 transactions simplify healthcare eligibility checks."
+
+---
+
+[Scene 1: Provider at a computer entering patient info]  
+Voiceover:  
+"It starts with a 270 inquiry. The provider sends patient details—like name, DOB, and policy number—to the insurer."
+
+---
+
+[Scene 2: Insurer system processing the request]  
+Voiceover:  
+"The insurer processes the request and checks the patient’s coverage in real time."
+
+---
+
+[Scene 3: A doctor typing on a laptop at a desk with number 271 on the screen.]  
+Voiceover:  
+"A 271 response is sent back, showing coverage type, co-pays, deductibles, and any limitations."
+
+---
+
+[Scene 4: Split screen  happy patient and efficient staff]  
+Voiceover:  
+"This means fewer claim denials, faster workflows, and patients who know what to expect."
+
+---
+
+[Scene 5: Icons showing compliance, revenue, satisfaction]  
+Voiceover:  
+"270/271 checks boost compliance, improve revenue cycle management, and enhance patient satisfaction."
+
+---
+
+[Closing Frame: Call to Action]  
+Text on screen: "A doctor typing on a laptop at a desk with number 270 & 271 on the screen."  
+Voiceover:  
+"Make eligibility checks effortless—with 270/271."
+
+---
