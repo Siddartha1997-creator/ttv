@@ -19,7 +19,7 @@ def split_script(script, max_duration=20, wpm=150):
     return [' '.join(words[i:i+max_words]) for i in range(0, len(words), max_words)]
 
 def generate_tts_audio(script_text, index):
-    output_file = f"audio_{index}.mp3"
+    output_file = f"output/audio_{index}.mp3"
     tts_url = f"https://{AZURE_SPEECH_REGION}.tts.speech.microsoft.com/cognitiveservices/v1"
     headers = {
         'Ocp-Apim-Subscription-Key': AZURE_SPEECH_KEY,
@@ -100,7 +100,7 @@ def combine_video_audio(video_path, audio_path, output_path):
         original_audio = AudioSegment.from_file(audio_path)
         silence = AudioSegment.silent(duration=(video_clip.duration - audio_clip.duration) * 1000)
         padded_audio = original_audio + silence
-        padded_audio_file = "padded_" + os.path.basename(audio_path)
+        padded_audio_file = "output/padded_" + os.path.basename(audio_path)
         padded_audio.export(padded_audio_file, format="mp3")
 
         if not os.path.exists(padded_audio_file):
@@ -118,7 +118,7 @@ def combine_video_audio(video_path, audio_path, output_path):
 
     print(f"🎬 Final video with audio saved as {output_path}")
 
-def merge_videos(video_files, output_file="final_output.mp4"):
+def merge_videos(video_files, output_file="output/final_output.mp4"):
     clips = [VideoFileClip(f) for f in video_files]
     final_clip = concatenate_videoclips(clips)
     final_clip.write_videofile(output_file,  codec="libx264", audio_codec="aac", temp_audiofile='temp-audio.m4a',remove_temp=True)
@@ -169,8 +169,8 @@ def main(script_input):
         audio_clip = AudioFileClip(audio_file)
         job_id = submit_sora_job(prompt=scene, duration=audio_clip.duration)
         generation_id = poll_until_done(job_id)
-        raw_video_path = f"raw_segment_{i+1}.mp4"
-        final_segment_path = f"segment_{i+1}.mp4"
+        raw_video_path = f"output/raw_segment_{i+1}.mp4"
+        final_segment_path = f"output/segment_{i+1}.mp4"
 
         download_file(generation_id, raw_video_path)
         combine_video_audio(raw_video_path, audio_file, final_segment_path)
@@ -188,6 +188,6 @@ def main(script_input):
 
 # Example
 if __name__ == "__main__":
-    with open("script.txt", "r") as f:
+    with open("scripts/script.txt", "r") as f:
         input_script = f.read()
     main(input_script)
